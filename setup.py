@@ -1,6 +1,7 @@
 from distutils.core import setup
 setup(
     name = 'middlecoords',
+    py_modules = ['middlecoords'],
     version = '1.0.0',
     description='Function which calculates coordinates between given positions',
     author = "Nikita Lyubchich",
