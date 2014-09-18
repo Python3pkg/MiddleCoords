@@ -1,9 +1,9 @@
 from itertools import islice
 from sys import argv
 
+
 class NoPair(Exception):
     pass
-
 
 
 def get_middle_position(*args):
@@ -35,5 +35,6 @@ def get_middle_position(*args):
     else:
         raise NoPair
 
-if __name__ == '__main__': # pragma: no cover
+
+if __name__ == '__main__':  # pragma: no cover
     print(get_middle_position(*argv[1:]))
