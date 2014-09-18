@@ -1,12 +1,9 @@
-class NotANumber(Exception):
-    pass
-
+from itertools import islice
+from sys import argv
 
 class NoPair(Exception):
     pass
 
-from itertools import islice
-from sys import argv
 
 
 def get_middle_position(*args):
@@ -22,26 +19,21 @@ def get_middle_position(*args):
         return
 
     arguments = list(map(float, args))
-    if all(type(value) is float for value in arguments):
 
-        latitudes = list()
-        longitudes = list()
+    latitudes = list()
+    longitudes = list()
 
-        for latitude in islice(arguments, 0, None, 2):
-            latitudes.append(latitude)
+    for latitude in islice(arguments, 0, None, 2):
+        latitudes.append(latitude)
 
-        for longitude in islice(arguments, 1, None, 2):
-            longitudes.append(longitude)
+    for longitude in islice(arguments, 1, None, 2):
+        longitudes.append(longitude)
 
-        if len(latitudes) == len(longitudes):
-            return sum(latitudes) / len(latitudes), sum(longitudes) / len(longitudes)
-
-        else:
-            raise NoPair
+    if len(latitudes) == len(longitudes):
+        return sum(latitudes) / len(latitudes), sum(longitudes) / len(longitudes)
 
     else:
-        raise NotANumber
+        raise NoPair
 
-
-if __name__ == '__main__':
+if __name__ == '__main__': # pragma: no cover
     print(get_middle_position(*argv[1:]))

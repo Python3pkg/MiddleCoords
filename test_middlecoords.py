@@ -44,6 +44,15 @@ class MiddlePositionTests(unittest.TestCase):
                           self.calculator,
                           self.first_lat, self.first_long,
                           self.second_lat)
+    def test_bad_input(self):
+        self.assertRaises(ValueError,
+                          self.calculator,
+                          "some",
+                          "bad",
+                          "input",
+                          "lalala")
+    def test_empty_input(self):
+        self.assertIsNone(self.calculator())
 
 
 if __name__ == '__main__':
