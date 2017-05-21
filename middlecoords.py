@@ -37,4 +37,4 @@ def get_middle_position(*args):
 
 
 if __name__ == '__main__':  # pragma: no cover
-    print(get_middle_position(*argv[1:]))
+    print((get_middle_position(*argv[1:])))
